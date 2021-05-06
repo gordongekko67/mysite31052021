@@ -21,6 +21,7 @@ from blog.sitemaps import PostSitemap
 from django.conf import settings
 from django.conf.urls.static import static
 from funzioniiot import views as views_app_iot
+from myshop import views as views_myshop
 from funzioniiot.views import titoloDetailView, TitoloDetailViewCB, home
 
 sitemaps = {
@@ -31,6 +32,7 @@ sitemaps = {
 
 urlpatterns = [
     path('', views_blog.homep),
+    path('hellomyshop', views_myshop.myshophello),
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls', namespace='blog')),
     path('shop/', include('shop.urls', namespace='shop')),

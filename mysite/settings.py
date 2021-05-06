@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
     'funzioniiot.apps.FunzioniiotConfig',
+    'myshop.apps.MyshopConfig',
     
     'taggit',
 
