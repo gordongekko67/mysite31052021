@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% block title %}{{ titoli.codtit2 }}{% endblock %}
+{% block content %}
+
+  <h1>lista   titoli  </h1>
+
+  {% for post in posts %}
+
+  <h1> {{ post.codtit2 }}</h1>
+  <h1> {{ post.codisintit2 }}</h1>
+  <h1>{{posts}}</h1>
+
+
+  <h1>
+    
+  <p class="date">
+    Published {{ titoli.codpublishtit2 }} by {{ titoli.codauthortit2 }}
+  </p>
+  {{ post.body|linebreaks }}
+{% endblock %}

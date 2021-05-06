@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+<div class="card my-3">
+<h1>Stampa dei fondi di Enrico Enrico  Enrico</h1>
+{{ section.title }}
+</div>
+{% endblock %}
+
+{% block content %}
+{% for story in titoli %}
+<p>
+  <div class="card my-3">
+    <a href="{{ story.get_absolute_url }}">{{story.codtit2}}</a>
+    {{ story.codtit2 }}  {{ story.codisintit2 }}  {{story.codbodytit2 }}    
+    <button type="submit" class="btn btn-primary btn-sm" href="{{ story.get_absolute_url }}" >{{story.codtit2}}</button>
+  </div>
+</p>
+
+{% endfor %}
+{% endblock %}

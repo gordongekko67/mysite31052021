@@ -1,0 +1,285 @@
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+ 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+     crossorigin="anonymous"></script>
+ 
+ </head>
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="container-fluid">
+     <a class="navbar-brand" href="#">Navbar</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="/">Home </a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">Link</a>
+         </li>
+         
+         {% if user.is_authenticated %}
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+             Menu opzioni 
+           </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <li><a class="dropdown-item" href="http://127.0.01:8000/prova_django">Prova Django</a></li>
+             <li><a class="dropdown-item" href="http://127.0.01:8000/chiamata_request">Chiamata request</a></li>
+             <li><a class="dropdown-item" href="http://127.0.01:8000/chiamata_request_payload">Chiamata request</a></li>
+             <li><a class="dropdown-item" href="http://127.0.01:8000/risposta_endpoint">Risposta endpoint</a></li>
+             <li><a class="dropdown-item" href="http://127.0.01:8000/redis_tutorial">Redis tutorial</a></li>
+             <li><a class="dropdown-item" href="http://127.0.01:8000/chat">Websocket chat</a></li>
+             <li><a class="dropdown-item" href="http://127.0.01:8000/servoMotorTest">Servomotor Test</a></li>
+             
+             <li>
+               <hr class="dropdown-divider">
+             </li>
+             <li><a class="dropdown-item" href="http://127.0.01:8000/accounts/logoutenrico/">Logout</a></li>
+           </ul>
+           {% else %}
+
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="http://127.0.01:8000/accounts/login">Login</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="http://127.0.01:8000/registrazione">Registrazione</a>
+         </li>
+
+
+
+
+         {% endif %}
+         </li>
+         <li class="nav-item">
+           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+         </li>
+       </ul>
+       <form class="d-flex">
+         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success" type="submit">Search</button>
+       </form>
+     </div>
+   </div>
+ </nav>
+
+ <br>
+
+
+
+
+
+
+<body>
+
+   <div class="jumbotron text-center">
+
+      <h1> Funzioni avanzate Iot </h1>
+
+   </div>
+
+   {% load static %}
+   
+   <img src="{% static 'assets/img/technology.jpeg' %}" alt="My image" width="1500" height="600">
+
+    <div class="row justify-content-center">
+
+
+      <a href="http://127.0.01:8000/altri/chiamataGET" method="GET">
+         <input type="button" class="btn btn-primary btn-lg" value="   Chiamata GET        " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/chiamataPOST" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Chiamata POST       " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/chiamataPWM" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Chiamata PWM        " />
+      </a>
+
+
+      <a href="http://127.0.01:8000/altri/chiamataREST" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Chiamata REST        " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/riceviRequest" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   RiceviRequest        " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/lancioJson" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Lancio Json          " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/chiamataCurl" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Chiamata CURL        " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/chiamataWget" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Chiamata Wget        " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/robotAvanti" method="GET">
+         <input type="button" class="btn btn-primary btn-lg" value="   Robot Avanti con messaggio MQTT   " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/letturaFtp" method="GET">
+         <input type="button" class="btn btn-primary btn-lg" value="   Lettura dati  ftp   " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/formato" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   lancio formato   " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/sensori" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   lancio formato sensori  " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/Mqtt_Javascript" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Client MQTT in Javascript Test Mosquito " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/Mqtt_Javascript_CloudMqtt" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Client MQTT in Javascript Cloudmqtt " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/client_Rabbit" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Client Rabbit" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/BLE" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Bluetooth  Low Energy" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/Lora" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Lora" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/Aws" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Interact Aws" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/Gcp" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Interact Gcp" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/Azure" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Interact Azure" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/webSocketLancio" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Client WebSocket  server Node.js" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/webSocketLancio2" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Client WebSocket  server Python " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/chiamataCOAP" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Chiamata COAP " />
+      </a>
+
+
+      <a href="http://127.0.01:8000/altri/clientOPC" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Client OPC " />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/imageDetection" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="   Image recognition  ImageAI" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/riconoscimentoFacciale" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Riconoscimento Facciale Haarcascade" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/riconoscimentoSegnaleStradale" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Riconoscimento segnale stradale" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/ROS" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  ROS Operating System " />
+      </a>
+      <a href="http://127.0.01:8000/altri/angular" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Angular Interface " />
+      </a>
+
+
+      <a href="http://127.0.01:8000/altri/scrittura_ThingSpeak" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Scrittura dati su ThingSpeak" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/graphdatastock" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Grafico azionario con QT" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/speechrecognition" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Riconoscimento vocale" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/RPCCall" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  RPC Remote procedure Call su Raspberry" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/I2C" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  I2C communication" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/SPI" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  SPI communication" />
+      </a>
+
+      <a href="http://127.0.01:8000/altri/UART" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  UART communication" />
+      </a>
+
+      <a href="http://127.0.01:8000/raspBerryPICamera" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Raspberry PI Camera" />
+      </a>
+
+      <a href="http://127.0.01:8000/roboticArm" method="POST">
+         <input type="button" class="btn btn-primary btn-lg" value="  Robotic Arm" />
+      </a>
+
+
+   </div>
+
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-4">
+            <h3>Column 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+         </div>
+         <div class="col-sm-4">
+            <h3>Column 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+         </div>
+         <div class="col-sm-4">
+            <h3>Column 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+         </div>
+      </div>
+   </div>
+
+
+
+</body>
+{% endblock content %}

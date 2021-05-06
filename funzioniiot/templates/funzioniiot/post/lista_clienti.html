@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ titoli.codcli }}{% endblock %}
+{% block content %}
+
+  <h1>lista   Clienti  </h1>
+
+  {% for cli  in clienti %}
+
+  <h1> {{ cli.codcli }}</h1>
+  <h1> {{ cli.descli }}</h1>
+  <h1>{{posts}}</h1>
+
+
+      
+  
+  {{ post.body|linebreaks }}
+{% endblock %}

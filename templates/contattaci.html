@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+       <div  class ="container">
+        <h1>Compila il forum     </h1>
+        <form action=""  method="POST" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class= "form-group">
+                    {{field.errors}}
+                    {{field.label_tag}}
+                    {{field}}
+            </div>
+            {% endfor %}
+         <input type="submit" class="btn btn-danger"   value="INVIA">
+        </form>
+
+        </div>
+
+{% endblock content %}
+
+
